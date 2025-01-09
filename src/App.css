@@ -1,9 +1,12 @@
-.App {
-  text-align: center;
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegúrate de que todo ocupe la altura completa */
 }
-.avatar-container{
+.avatar-container {
   width: 100%;
-  height: 80vh;
-  background-color: rgb(255, 255, 255);
-  border-radius: 50px;
+  height: 100vh; /* Usa el 100% de la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei';
 import FaceMeshTracker from './components/FaceMeshTracker';
 
 const Model = ({ headPosition, scale }) => {
-  const { scene, nodes } = useGLTF('result_avatar_esq.gltf');
+  const { scene, nodes } = useGLTF('result_cabeza.gltf');
   const headRef = useRef();
 
   useEffect(() => {
@@ -12,8 +12,8 @@ const Model = ({ headPosition, scale }) => {
       // La posición de la cabeza debe ajustarse en relación con la jerarquía del modelo
       // Calcula el ajuste necesario para que la cabeza esté alineada con el cuerpo
       headRef.current.position.set(
-        headPosition.x,  // Mantén la posición X ajustada con el face tracking
-        headPosition.y,  // Lo mismo para Y y Z
+        headPosition.x ,  // Mantén la posición X ajustada con el face tracking
+        headPosition.y ,  // Lo mismo para Y y Z
         headPosition.z
       );
     }
@@ -28,11 +28,11 @@ const Model = ({ headPosition, scale }) => {
 };
 
 const App = () => {
-  const [headPosition, setHeadPosition] = useState({ x: 0, y: 0, z: 0 });
+  const [headPosition, setHeadPosition] = useState({ x: 0, y: -3, z: -5});
   const scale = 1;
 
   return (
-    <div>
+    <div className='avatar-container'>
       <FaceMeshTracker setHeadPosition={setHeadPosition} />
       <Canvas>
         <ambientLight />
